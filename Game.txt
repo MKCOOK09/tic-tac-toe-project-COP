@@ -1,0 +1,208 @@
+//GAME IS SETUP IN 0's GRID
+//USE CAP LETTERS AND NUMBERS
+//TO ENTER COORDS
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    int win, turn;
+    turn = 0;
+    string sel;
+    int grida[3];
+    int gridb[3];
+    int gridc[3];
+    win = 0;
+    
+    cout<<"HOW TO PLAY: Use the zero's grid to play tic-tac-toe."<<endl;
+    cout<<"Decide who will go first and enter the coordinates for "<<endl;
+    cout<<"where you will select your area. Example: a3"<<endl;
+    cout<<" 0 0 0 "<<endl;
+    cout<<" 0 0 0 "<<endl;
+    cout<<" 0 0 0 "<<endl;
+    cout<<"Player 1 are '1's and Player 2 are '2's"<<endl;
+    cout<<"\n";
+    
+    while(win == 0) {
+        if(turn == 0) {
+            cout<<"Enter P1: ";
+        } else {
+            cout<<"Enter P2: ";
+        }
+        cin>>sel;
+        if(sel == "A1") {                   //LINE A
+            if(grida[0] == 0) {
+                if(turn == 0) {
+                    grida[0] = 1;
+                } else {
+                    grida[0] = 2;
+                }
+                cout<<"A1 Set"<<endl;
+            }
+        }
+        if(sel == "A2") {
+            if(grida[1] == 0) {
+                if(turn == 0) {
+                    grida[1] = 1;
+                } else {
+                    grida[1] = 2;
+                }
+                cout<<"A2 Set"<<endl;
+            }
+        }
+        if(sel == "A3") {
+            if(grida[2] == 0) {
+                if(turn == 0) {
+                    grida[2] = 1;
+                } else {
+                    grida[2] = 2;
+                }
+                cout<<"A3 Set"<<endl;
+            }
+        }
+        if(sel == "B1") {                   //LINE B
+            if(gridb[0] == 0) {
+                if(turn == 0) {
+                    gridb[0] = 1;
+                } else {
+                    gridb[0] = 2;
+                }
+                cout<<"B1 Set"<<endl;
+            }
+        }
+        if(sel == "B2") {
+            if(gridb[1] == 0) {
+                if(turn == 0) {
+                    gridb[1] = 1;
+                } else {
+                    gridb[1] = 2;
+                }
+                cout<<"B2 Set"<<endl;
+            }
+        }
+        if(sel == "B3") {
+            if(gridb[2] == 0) {
+                if(turn == 0) {
+                    gridb[2] = 1;
+                } else {
+                    gridb[2] = 2;
+                }
+                cout<<"B3 Set"<<endl;
+            }
+        }
+        if(sel == "C1") {                   //LINE C
+            if(gridc[0] == 0) {
+                if(turn == 0) {
+                    gridc[0] = 1;
+                } else {
+                    gridc[0] = 2;
+                }
+                cout<<"C1 Set"<<endl;
+            }
+        }
+        if(sel == "C2") {
+            if(gridc[1] == 0) {
+                if(turn == 0) {
+                    gridc[1] = 1;
+                } else {
+                    gridc[1] = 2;
+                }
+                cout<<"C2 Set"<<endl;
+            }
+        }
+        if(sel == "C3") {
+            if(gridc[2] == 0) {
+                if(turn == 0) {
+                    gridc[2] = 1;
+                } else {
+                    gridc[2] = 2;
+                }
+                cout<<"C3 Set"<<endl;
+            }
+        }
+        if(turn == 0) {
+            turn = 1;
+        } else {
+            turn = 0;
+        }
+        cout<<" "<<grida[0]<<" "<<grida[1]<<" "<<grida[2]<<endl;       //Game Grid
+        cout<<" "<<gridb[0]<<" "<<gridb[1]<<" "<<gridb[2]<<endl;
+        cout<<" "<<gridc[0]<<" "<<gridc[1]<<" "<<gridc[2]<<endl;
+        cout<<"\n";
+        
+        //3 IN A ROW CHECKER
+        //PLAYER 1
+        if(grida[0] == 1 && grida[1] == 1 && grida[2] == 1) {   //Top Row
+            cout<<"P1 WIN";
+            win = 1;
+        }
+        if(gridb[0] == 1 && gridb[1] == 1 && gridb[2] == 1) {   //Middle Row
+            cout<<"P1 WIN";
+            win = 1;
+        }
+        if(gridc[0] == 1 && gridc[1] == 1 && gridc[2] == 1) {   //Bottom Row
+            cout<<"P1 WIN";
+            win = 1;
+        }
+        if(grida[0] == 1 && gridb[0] == 1 && gridc[0] == 1) {   //First Col
+            cout<<"P1 WIN";
+            win = 1;
+        }
+        if(grida[1] == 1 && gridb[1] == 1 && gridc[1] == 1) {   //Sec Col
+            cout<<"P1 WIN";
+            win = 1;
+        }
+        if(grida[2] == 1 && gridb[2] == 1 && gridc[2] == 1) {   //Third Col
+            cout<<"P1 WIN";
+            win = 1;
+        }
+        if(grida[0] == 1 && gridb[1] == 1 && gridc[2] == 1) {   //Left Di
+            cout<<"P1 WIN";
+            win = 1;
+        }
+        if(grida[2] == 1 && gridb[1] == 1 && gridc[0] == 1) {   //Right Di
+            cout<<"P1 WIN";
+            win = 1;
+        }
+        //PLAYER 2
+        if(grida[0] == 2 && grida[1] == 2 && grida[2] == 2) {   //Top Row
+            cout<<"P2 WIN";
+            win = 1;
+        }
+        if(gridb[0] == 2 && gridb[1] == 2 && gridb[2] == 2) {   //Middle Row
+            cout<<"P2 WIN";
+            win = 1;
+        }
+        if(gridc[0] == 2 && gridc[1] == 2 && gridc[2] == 2) {   //Bottom Row
+            cout<<"P2 WIN";
+            win = 1;
+        }
+        if(grida[0] == 2 && gridb[0] == 2 && gridc[0] == 2) {   //First Col
+            cout<<"P2 WIN";
+            win = 1;
+        }
+        if(grida[1] == 2 && gridb[1] == 2 && gridc[1] == 2) {   //Sec Col
+            cout<<"P2 WIN";
+            win = 1;
+        }
+        if(grida[2] == 2 && gridb[2] == 2 && gridc[2] == 2) {   //Third Col
+            cout<<"P2 WIN";
+            win = 1;
+        }
+        if(grida[0] == 2 && gridb[1] == 2 && gridc[2] == 2) {   //Left Di
+            cout<<"P2 WIN";
+            win = 1;
+        }
+        if(grida[2] == 2 && gridb[1] == 2 && gridc[0] == 2) {   //Right Di
+            cout<<"P2 WIN";
+            win = 1;
+        }
+        if(grida[0] != 0 && grida[1] != 0 && grida[2] != 0 && gridb[0] != 0 && gridb[1] != 0 && gridb[2] != 0 && gridc[0] != 0 && gridc[1] != 0 && gridc[2] != 0) {
+            cout<<"It's a draw!";
+            win = 1;
+        }
+    }
+    return 0;
+}
